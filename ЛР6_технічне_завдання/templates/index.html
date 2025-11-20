@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук студентів</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 40px;
+            max-width: 600px;
+            width: 100%;
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 2em;
+        }
+        .subtitle { color: #666; margin-bottom: 30px; }
+        .search-form { margin-bottom: 30px; }
+        .form-group { margin-bottom: 20px; }
+        label { font-weight: 600; margin-bottom: 8px; display: block; }
+        input[type="text"] {
+            width: 100%; padding: 12px;
+            border: 2px solid #e0e0e0; border-radius: 8px;
+            transition: 0.3s;
+        }
+        input[type="text"]:focus { border-color: #667eea; }
+        button {
+            width: 100%; padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white; border: none; border-radius: 8px;
+            font-weight: 600; cursor: pointer;
+        }
+        code {
+            background: #2d2d2d; color: #00ff00; padding: 8px;
+            display: block; border-radius: 5px;
+            margin-bottom: 10px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Пошук студентів</h1>
+    <p class="subtitle">Пошук інформації про студентів та їх стипендії</p>
+
+    <form action="/search" method="GET" class="search-form">
+        <div class="form-group">
+            <label for="name">Ім'я студента:</label>
+            <input type="text" id="name" name="name" placeholder="Наприклад: Микита">
+        </div>
+        <button type="submit">🔍 Пошук</button>
+    </form>
+
+    <h3>Приклади SQL-інʼєкцій:</h3><br>
+
+    <code onclick="document.getElementById('name').value=this.textContent">' OR '1'='1</code>
+
+    <code onclick="document.getElementById('name').value=this.textContent">' UNION SELECT id, name, faculty, gpa, scholarship FROM students--
+    </code>
+
+</div>
+</body>
+</html>
